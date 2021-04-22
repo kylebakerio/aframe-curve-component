@@ -204,7 +204,7 @@ AFRAME.registerComponent('draw-curve', {
 
     remove: function () {
         this.data.curve.removeEventListener('curve-updated', this.update.bind(this));
-        this.el.getObject3D('mesh').geometry = new THREE.Geometry();
+        this.el.getObject3D('mesh').geometry = new THREE.BufferGeometry();
     }
 
 });
