@@ -1,5 +1,9 @@
 Another necro-component pulled into service - working with a-Frame 1.3.0.
 
+Demo: https://follow-path.glitch.me/
+Remix it: https://glitch.com/edit/#!/remix/follow-path
+
+
 ## aframe-curve-component
 
 A Curve component to draw curves in A-Frame. The component consists of multiple components:
