@@ -1,3 +1,5 @@
+Another necro-component pulled into service.
+
 ## aframe-curve-component
 
 [![Version](http://img.shields.io/npm/v/aframe-curve-component.svg?style=flat-square)](https://npmjs.org/package/aframe-curve-component)
@@ -9,10 +11,11 @@ A Curve component to draw curves in A-Frame. The component consists of multiple 
 * curve-point: Defines the curve based on it's position. Multiple entities are added as children of the curve-entity.
 * draw-curve: Add's a Mesh to the curve to visualize it
 * clone-along-curve: Clones an Entity along the curve (e.g. to build a race track based on track parts)
+* **follow-path**: Animates an entity following a curved path
 
 For [A-Frame](https://aframe.io).
 
-Credits: Initial concept and development has been done by [AdaRoseEdwards](https://github.com/SamsungInternet/a-frame-components/blob/master/dist/curve.js).
+Credits: Initial concept and development has been done by [AdaRoseEdwards](https://github.com/SamsungInternet/a-frame-components/blob/master/dist/curve.js). Revived to get working with Aframe 1.2.0-1.3.0 by David F Stein. Follow-path added by [kyle baker](kyle.su).
 
 ### API (curve)
 
@@ -46,53 +49,4 @@ Credits: Initial concept and development has been done by [AdaRoseEdwards](https
 
 #### Browser
 
-Install and use by directly including the [browser files](dist):
-
-```html
-<head>
-  <title>My A-Frame Scene</title>
-  <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe-master.min.js"></script>
-  <script src="https://unpkg.com/aframe-curve-component/dist/aframe-curve-component.min.js"></script>
-</head>
-
-<body>
-  <a-scene>
-    <a-curve id="track1">
-        <a-curve-point position="-1 1 -3"></a-curve-point>
-        <a-curve-point position="1 1 -3"></a-curve-point>
-    </a-curve>
-    
-    <!-- Draw the Curve -->
-    <a-draw-curve curveref="#track1" material="shader: line; color: blue;"></a-draw-curve>
-    
-    <!-- Clone a Box along the Curve -->
-    <a-entity clone-along-curve="curve: #track1; spacing: 0.2; scale: 1 1 1; rotation: 0 0 0;" geometry="primitive:box; height:0.1; width:0.2; depth:0.1"></a-entity>
-  </a-scene>
-</body>
-```
-
-<!-- If component is accepted to the Registry, uncomment this. -->
-<!--
-Or with [angle](https://npmjs.com/package/angle/), you can install the proper
-version of the component straight into your HTML file, respective to your
-version of A-Frame:
-
-```sh
-angle install aframe-curve-component
-```
--->
-
-#### npm
-
-Install via npm:
-
-```bash
-npm install aframe-curve-component
-```
-
-Then require and use.
-
-```js
-require('aframe');
-require('aframe-curve-component');
-```
+Dist file is out of date, just use index.js file for now, minify yourself if needed. Will ideally update and publish better version later.
