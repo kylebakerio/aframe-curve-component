@@ -12,7 +12,7 @@ A Curve component to draw curves in A-Frame. The component consists of multiple 
 
 For [A-Frame](https://aframe.io).
 
-Credits: Initial concept and development has been done by [AdaRoseEdwards](https://github.com/SamsungInternet/a-frame-components/blob/master/dist/curve.js). Revived to get working with Aframe 1.2.0-1.3.0 by David F Stein. Follow-path added by [kyle baker](kyle.su).
+Credits: Initial concept and development has been done by [AdaRoseEdwards](https://github.com/SamsungInternet/a-frame-components/blob/master/dist/curve.js). Revived to get working with Aframe 1.2.0-1.3.0 by [David F Stein](https://github.com/davidfstein/aframe-curve-component). Follow-path added by [kyle baker](kyle.su).
 
 ### API (curve)
 
