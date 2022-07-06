@@ -1,7 +1,7 @@
 Another necro-component pulled into service - working with a-Frame 1.3.0.
 
-Demo: https://follow-path.glitch.me/
-Remix it: https://glitch.com/edit/#!/remix/follow-path
+* Demo: https://follow-path.glitch.me/
+* Remix it: https://glitch.com/edit/#!/remix/follow-path
 
 Note: There is also another fork that was more recently updated than the fork I based mine off of by the prolific Ada. It may suite you to check it out [here](https://github.com/AdaRoseCannon/aframe-curves).
 
