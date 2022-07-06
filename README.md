@@ -1,9 +1,6 @@
-Another necro-component pulled into service.
+Another necro-component pulled into service - working with a-Frame 1.3.0.
 
 ## aframe-curve-component
-
-[![Version](http://img.shields.io/npm/v/aframe-curve-component.svg?style=flat-square)](https://npmjs.org/package/aframe-curve-component)
-[![License](http://img.shields.io/npm/l/aframe-curve-component.svg?style=flat-square)](https://npmjs.org/package/aframe-curve-component)
 
 A Curve component to draw curves in A-Frame. The component consists of multiple components:
 
