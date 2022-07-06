@@ -235,3 +235,23 @@ AFRAME.registerPrimitive('a-curve', {
         type: 'curve.type',
     }
 });
+
+AFRAME.registerComponent('follow-path', {
+    schema: {
+        curve: {default: 'a-curve'}, // css selector
+        incrementBy: {default: 0.01},
+        throttleTo: {default: 100},
+    },
+    init() {
+        this.tick = AFRAME.utils.throttleTick(this.tick, this.data.throttleTo, this);   
+        this.curve = document.querySelector(this.data.curve);
+        console.log(this.curve);
+    },
+    currentPercent: 0,
+    newPos: {}, // better garbage handling
+    tick() {
+        this.currentPercent = this.currentPercent > (1 - this.data.incrementBy) ? 0 : this.currentPercent + this.data.incrementBy;
+        this.newPos = this.curve.components.curve.curve.getPoint(this.currentPercent);
+        this.el.setAttribute('position', this.newPos);        
+    },
+})
