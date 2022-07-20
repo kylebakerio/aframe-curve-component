@@ -13,7 +13,7 @@ A Curve component to draw curves in A-Frame. The component consists of multiple 
 * curve-point: Defines the curve based on it's position. Multiple entities are added as children of the curve-entity.
 * draw-curve: Add's a Mesh to the curve to visualize it
 * clone-along-curve: Clones an Entity along the curve (e.g. to build a race track based on track parts)
-* **follow-path**: Animates an entity following a curved path
+* **follow-path (new)**: Animates an entity following a curved path
 
 For [A-Frame](https://aframe.io).
 
@@ -26,14 +26,10 @@ Credits: Initial concept and development has been done by [AdaRoseEdwards](https
 <html lang="en">
   <head>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
-    <script src="aframe-curve.js"></script>
-
-    <script src="/script.js" defer></script>
+    <script src="components/aframe-curve/index.js"></script>
   </head>
   <body>
-    <a-scene>
-      <a-sky color="#ECECEC"></a-sky>
-      
+    <a-scene>      
       <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
       <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
@@ -100,4 +96,4 @@ Just add index.js and reference it as needed like any other standard aframe comp
 
 #### Browser
 
-**Dist file is out of date, just use index.js file for now, minify yourself if needed. Will ideally update and publish better version later.**
+**Dist file is out of date, just use index.js file for now, minify yourself if needed. Will ideally update and publish later.**
