@@ -47,8 +47,19 @@ Credits: Initial concept and development has been done by [AdaRoseEdwards](https
 | rotation         | Rotation of the cloned Entities            | '0 0 0'              |
 | scale         | Scale of the cloned entities            | '1 1 1'              |
 
+
+### API (follow-path)
+
+| Property | Description | Default Value |
+| -------- | ----------- | ------------- |
+| curve         | A Selector to identify the corresponding curve; default works if there is only one curve in scene            | 'a-curve'              |
+| incrementBy         | what percent of path to progress by each update            | 0.01              |
+| throttleTo         | throttle rate; how many milliseconds between each update            | 100              |
+
 ### Installation
+
+Just add index.js and reference it as needed like any other standard aframe component.
 
 #### Browser
 
-Dist file is out of date, just use index.js file for now, minify yourself if needed. Will ideally update and publish better version later.
+**Dist file is out of date, just use index.js file for now, minify yourself if needed. Will ideally update and publish better version later.**
