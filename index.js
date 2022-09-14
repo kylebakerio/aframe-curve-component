@@ -1,4 +1,4 @@
-/* global AFRAME */
+/* global AFRAME THREE */
 
 if (typeof AFRAME === 'undefined') {
     throw new Error('Component attempted to register before AFRAME was available.');
@@ -42,6 +42,10 @@ AFRAME.registerComponent('curve', {
         closed: {
             type: 'boolean',
             default: false
+        },
+        tension: {
+            type: 'number',
+            default: 0.5
         }
     },
 
@@ -98,10 +102,10 @@ AFRAME.registerComponent('curve', {
                         this.curve = new THREE.LineCurve3(this.pathPoints[0], this.pathPoints[1]);
                         break;
                     case 'CatmullRom':
-                        this.curve = new THREE.CatmullRomCurve3(this.pathPoints);
+                        this.curve = new THREE.CatmullRomCurve3(this.pathPoints, this.data.closed, 'catmullrom', this.data.tension);
                         break;
                     case 'Spline':
-                        this.curve = new THREE.SplineCurve3(this.pathPoints);
+                        this.curve = new THREE.SplineCurve(this.pathPoints);
                         break;
                     default:
                         throw new Error('No Three constructor of type (case sensitive): ' + this.data.type + 'Curve3');
@@ -161,26 +165,14 @@ function normalFromTangent(tangent) {
     return lineEnd;
 }
 
-AFRAME.registerShader('line', {
-    schema: {
-        color: {default: '#ff0000'},
-    },
-
-    init: function (data) {
-        this.material = new THREE.LineBasicMaterial(data);
-    },
-
-    update: function (data) {
-        this.material = new THREE.LineBasicMaterial(data);
-    },
-});
 
 AFRAME.registerComponent('draw-curve', {
 
     //dependencies: ['curve', 'material'],
 
     schema: {
-        curve: {type: 'selector'}
+        curve: {type: 'selector'},
+        color: {type: 'color', default: '#ff00ff'}
     },
 
     init: function () {
@@ -195,8 +187,9 @@ AFRAME.registerComponent('draw-curve', {
         if (this.curve && this.curve.curve) {
             var lineGeometry = new THREE.BufferGeometry().setFromPoints(this.curve.curve.getPoints(this.curve.curve.getPoints().length * 10));
             var mesh = this.el.getOrCreateObject3D('mesh', THREE.Line);
-            lineMaterial = mesh.material ? mesh.material : new THREE.LineBasicMaterial({
-                color: "#ff0000"
+            var lineMaterial = new THREE.LineBasicMaterial({
+                color: this.data.color,
+                linewidth: 1,
             });
 
             this.el.setObject3D('mesh', new THREE.Line(lineGeometry, lineMaterial));
@@ -216,6 +209,7 @@ AFRAME.registerPrimitive('a-draw-curve', {
     },
     mappings: {
         curveref: 'draw-curve.curve',
+        color: 'draw-curve.color'
     }
 });
 
@@ -233,6 +227,8 @@ AFRAME.registerPrimitive('a-curve', {
 
     mappings: {
         type: 'curve.type',
+        closed: 'curve.closed',
+        tension: 'curve.tension'
     }
 });
 
