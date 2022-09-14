@@ -45,7 +45,7 @@ Credits: Initial concept and development has been done by [AdaRoseEdwards](https
       </a-curve>
     
       <!-- Draw the curve -->
-      <a-draw-curve curveref="#track1" material="shader: line; color: blue;"></a-draw-curve>
+      <a-draw-curve curveref="#track1" color="#0000ff"></a-draw-curve>
       
       <!-- Follow the curve -->
       <a-sphere follow-path="incrementBy:0.01; throttleTo:30" position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
