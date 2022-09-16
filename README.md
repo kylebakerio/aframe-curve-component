@@ -1,3 +1,8 @@
+# new home
+see: https://github.com/A-Frame-Community/a-curve
+
+____________
+
 Another necro-component pulled into service - confirmed working with a-Frame 1.3.0.
 
 * Demo: https://follow-path.glitch.me/
