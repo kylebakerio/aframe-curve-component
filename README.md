@@ -1,4 +1,4 @@
-# new home
+# new home: now a community component
 see: https://github.com/A-Frame-Community/a-curve
 
 ____________
