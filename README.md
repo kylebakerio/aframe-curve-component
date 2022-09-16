@@ -1,4 +1,4 @@
-Another necro-component pulled into service - working with a-Frame 1.3.0.
+Another necro-component pulled into service - confirmed working with a-Frame 1.3.0.
 
 * Demo: https://follow-path.glitch.me/
 * Remix it: https://glitch.com/edit/#!/remix/follow-path
