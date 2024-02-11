@@ -54,7 +54,7 @@
 	 * Curve component for A-Frame to deal with spline curves
 	 */
 	var zAxis = new THREE.Vector3(0, 0, 1);
-	var degToRad = THREE.Math.degToRad;
+	var degToRad = THREE.MathUtils.degToRad;
 
 	AFRAME.registerComponent('curve-point', {
 
